@@ -94,7 +94,7 @@ public class ProtocolChannelHandler  extends SimpleChannelInboundHandler<Message
             }
 
             if(idleStateEvent.state() == IdleState.WRITER_IDLE){
-                log.debug("send heart message to {} ", ctx.channel().remoteAddress());
+//                log.debug("send heart message to {} ", ctx.channel().remoteAddress());
                 ctx.writeAndFlush(new Heartbeat());
             }
         }

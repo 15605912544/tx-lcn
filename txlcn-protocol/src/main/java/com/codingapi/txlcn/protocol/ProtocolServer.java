@@ -44,11 +44,9 @@ public class ProtocolServer {
     @Getter
     private final Protocoler protocoler;
 
-
     public ProtocolServer(Config config,ApplicationContext applicationContext) {
         this.config = config;
         this.applicationContext = applicationContext;
-
         protocoler = new Protocoler(config);
 
         acceptorEventLoopGroup = new NioEventLoopGroup(1);
@@ -122,7 +120,7 @@ public class ProtocolServer {
         }
         String uniqueKey = String.format("%s:%d",host,port);
         if(protocoler.existConnect(uniqueKey)){
-            log.warn("Already existing connection to " + uniqueKey + " is closed.");
+//            log.warn("Already existing connection to " + uniqueKey + " is closed.");
             return false;
         }
 
